@@ -1,11 +1,13 @@
+import AllCards from "../../components/dashboardOverview/Allcards";
+import BottomOverView from "../../components/dashboardOverview/BottomOverView";
+import Chart from "../../components/dashboardOverview/Chart";
+
 const DashboardOverview = () => {
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-2">Dashboard Overview</h1>
-      <p className="text-gray-600">
-        Welcome to your dashboard. Here you can see an overview of your
-        activity.
-      </p>
+    <div className="p-4 space-y-10">
+      <AllCards />
+      <Chart />
+      <BottomOverView />
     </div>
   );
 };
