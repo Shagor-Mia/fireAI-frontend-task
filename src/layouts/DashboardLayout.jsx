@@ -1,13 +1,14 @@
 import { AiOutlineHome } from "react-icons/ai";
-import { CgProfile } from "react-icons/cg";
-import { LuTicketsPlane } from "react-icons/lu";
-import { TbTransactionPound } from "react-icons/tb";
 import logoImg from "../assets/Container.png";
+import avtar from "../assets/avtar.png";
 import { useState } from "react";
-import { Link, NavLink, Outlet } from "react-router";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { IoIosLogOut } from "react-icons/io";
+import { IoCallOutline, IoSettingsOutline } from "react-icons/io5";
+import { CiCalendar } from "react-icons/ci";
+import { FaRegBell } from "react-icons/fa";
 
 const DashboardLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -22,19 +23,30 @@ const DashboardLayout = () => {
     {
       to: "call-logs",
       label: "Call Logs",
-      icon: <TbTransactionPound />,
+      icon: <IoCallOutline />,
     },
     {
       to: "appointments",
       label: "Appointments",
-      icon: <LuTicketsPlane />,
+      icon: <CiCalendar />,
     },
     {
       to: "settings",
       label: "Settings",
-      icon: <CgProfile />,
+      icon: <IoSettingsOutline />,
     },
   ];
+
+  const location = useLocation();
+
+  const pageTitles = {
+    "/dashboard": "Dashboard Overview",
+    "/dashboard/call-logs": "Call Logs & history",
+    "/dashboard/appointments": "Appointments",
+    "/dashboard/settings": "Settings",
+  };
+
+  const pageTitle = pageTitles[location.pathname] || "Dashboard Overview";
 
   return (
     <>
@@ -57,15 +69,23 @@ const DashboardLayout = () => {
             >
               <HiMenuAlt1 className="text-xl" />
             </label>
-
-            <h2 className="text-lg sm:text-2xl  truncate flex justify-between items-center">
-              Dashboard Overview
-              <span className="lg:hidden block">
-                <Link to="/" className="flex items-center gap-2">
-                  <img src={logoImg} className="h-10" alt="Logo" />
+            <div className="flex items-center justify-between flex-1">
+              <h2 className="md:text-3xl sm:text-2xl px-5 py-3 ">
+                {pageTitle}
+              </h2>
+              <div className="flex justify-center items-center gap-5 md:gap-10">
+                <Link className="md:text-2xl" to={"/"}>
+                  <span>
+                    <FaRegBell />
+                  </span>
                 </Link>
-              </span>
-            </h2>
+                <Link to={"/"}>
+                  <span>
+                    <img src={avtar} className=" w-12 md:w-16" alt="" />
+                  </span>
+                </Link>
+              </div>
+            </div>
           </nav>
 
           <div className="md:p-4">
@@ -84,11 +104,15 @@ const DashboardLayout = () => {
   `}
           >
             {/* Logo */}
-            <div className="flex items-center justify-between px-4 py-4 w-full">
+            <div className="flex items-center justify-between mt-5 px-4 py-4 w-full">
               <div className="flex-1 flex justify-center">
                 {!collapsed && (
                   <Link to="/dashboard">
-                    <img src={logoImg} className="h-10" alt="Logo" />
+                    <img
+                      src={logoImg}
+                      className="md:h-15 md:mt-0 mt-10"
+                      alt="Logo"
+                    />
                   </Link>
                 )}
               </div>
@@ -103,19 +127,36 @@ const DashboardLayout = () => {
             </div>
 
             {/* Menu */}
-            <ul className="menu px-4 gap-1 flex-1 overflow-y-auto">
+            <ul className="menu px-4 gap-4 flex-1 md:mt-10 overflow-y-auto">
               {Links.map((item, i) => (
                 <li key={i}>
                   <NavLink
                     to={item.to}
+                    end={item.to === ""}
                     onClick={closeDrawer}
                     className={({ isActive }) =>
-                      `flex items-center gap-3 ${
-                        isActive ? "bg-green-100 text-green-700 " : ""
-                      }`
+                      `
+          flex items-center gap-3 w-full
+          px-3 py-2 rounded-xl
+          text-white font-medium
+          transition-all duration-300
+          
+          ${
+            isActive
+              ? `
+             backdrop-blur-2xl
+             border-white/80
+            shadow-[0_0_15px_rgba(255,255,255,0.5)]
+            hover:shadow-[0_0_25px_rgba(255,255,255,0.6)]
+            hover:border-white/90
+            active:scale-95
+          `
+              : ""
+          }
+          `
                     }
                   >
-                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-2xl">{item.icon}</span>
                     {!collapsed && <span>{item.label}</span>}
                   </NavLink>
                 </li>
@@ -123,12 +164,14 @@ const DashboardLayout = () => {
             </ul>
 
             {/* Logout pinned at bottom */}
-            <div className="mt-auto px-4 py-4 ">
+            <div className="mt-auto px-4 mr-8 py-3 ">
               <Link
                 to="/dashboard"
                 className="flex items-center gap-2 text-red-500 hover:bg-red-100 p-2 rounded"
               >
-                <IoIosLogOut className="text-2xl text-black" />
+                <span>
+                  <IoIosLogOut className="text-3xl text-black" />
+                </span>
                 {!collapsed && <span>Log Out</span>}
               </Link>
             </div>
