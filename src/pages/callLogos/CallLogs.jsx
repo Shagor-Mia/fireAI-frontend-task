@@ -1,10 +1,17 @@
+import CallDetails from "../../components/callList/CallDetails";
+import CallList from "../../components/callList/CallList";
+
 const CallLogs = () => {
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-2">Call Logs</h1>
-      <p className="text-gray-600">
-        This page shows all incoming and outgoing call logs.
-      </p>
+      <div className="flex flex-col md:flex-row gap-5 justify-between">
+        <div className="flex-1">
+          <CallList />
+        </div>
+        <div className="flex-1">
+          <CallDetails />
+        </div>
+      </div>
     </div>
   );
 };
