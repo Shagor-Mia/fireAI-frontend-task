@@ -54,7 +54,7 @@ const CallListCard = ({
                   alt=""
                   className="shrink-0 h-12 w-12 md:h-14 md:w-14"
                 />
-                <div>
+                <div className="text-xs">
                   <span className="text-slate-100 text-base block truncate">
                     {phone}
                   </span>

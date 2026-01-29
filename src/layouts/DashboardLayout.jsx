@@ -79,7 +79,7 @@ const DashboardLayout = () => {
                     <FaRegBell />
                   </span>
                 </Link>
-                <Link to={"/"}>
+                <Link to={"/dashboard/settings"}>
                   <span>
                     <img src={avtar} className=" w-12 md:w-16" alt="" />
                   </span>
@@ -166,7 +166,7 @@ const DashboardLayout = () => {
             {/* Logout pinned at bottom */}
             <div className="mt-auto px-4 mr-8 py-3 ">
               <Link
-                to="/dashboard"
+                to="/dashboard/settings"
                 className="flex items-center gap-2 text-red-500 hover:bg-red-100 p-2 rounded"
               >
                 <span>

@@ -29,7 +29,7 @@ const AllActivity = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-6 md:gap-6 gap-2 h-full">
+    <div className="grid grid-cols-1 dark:bg-gray-900 rounded-xl  md:rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-6 md:gap-6 gap-2 h-full">
       <h1 className="md:text-2xl pt-3">Recent Activity</h1>
       {activity.map((card) => (
         <Activities key={card.id} card={card} />

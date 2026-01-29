@@ -17,7 +17,7 @@ const SearchInput = () => {
             border border-slate-700/60
             text-slate-100
             placeholder:text-slate-500
-            rounded-2xl
+            rounded-xl  md:rounded-2xl
             text-base
             outline-none
             transition-all duration-300
@@ -34,7 +34,7 @@ const SearchInput = () => {
           <Search size={20} strokeWidth={2.2} />
         </div>
 
-        {/* Optional subtle shine effect on focus */}
+        {/* shine effect on focus */}
         <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-blue-500/5 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity duration-500" />
       </div>
     </div>

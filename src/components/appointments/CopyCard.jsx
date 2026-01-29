@@ -11,7 +11,7 @@ const CopyCard = ({ bookingLink }) => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-b my-6 sm:my-10 from-black via-slate-950 to-slate-900 rounded-2xl border border-slate-800 shadow-2xl py-4 overflow-hidden">
+    <div className="w-full bg-gradient-to-b my-6 sm:my-10 from-black via-slate-950 to-slate-900 rounded-xl md:rounded-2xl border border-slate-800 shadow-2xl py-4 overflow-hidden">
       {/* Title */}
       <div className="px-4 sm:px-6 py-2">
         <h3 className="text-xl sm:text-2xl text-slate-300">Booking Link</h3>
@@ -30,7 +30,7 @@ const CopyCard = ({ bookingLink }) => {
               px-4 sm:px-5 py-3 sm:py-4
               bg-black/40
               border border-slate-700
-              rounded-xl
+               rounded-xl md:rounded-2xl
               text-xs sm:text-sm
               tracking-wider
               focus:outline-none
@@ -48,7 +48,7 @@ const CopyCard = ({ bookingLink }) => {
               flex items-center justify-center gap-2
               w-full sm:w-auto
               px-4 sm:px-5 py-3 sm:py-4
-              rounded-xl
+               rounded-xl md:rounded-2xl
               text-sm
               font-medium
               transition-all duration-300

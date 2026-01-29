@@ -1,4 +1,3 @@
-import { Phone } from "lucide-react";
 import CallListCard from "./CallListCard";
 import { useState } from "react";
 import SearchInput from "../Search";
@@ -60,10 +59,10 @@ const CallList = () => {
       <SearchInput />
 
       {/* Card Container */}
-      <div className="bg-slate-900/90 backdrop-blur-sm rounded-2xl border border-slate-800/60 shadow-2xl overflow-hidden">
+      <div className="bg-slate-900/90 backdrop-blur-sm rounded-xl  md:rounded-2xl border border-slate-800/60 shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="px-4 md:px-6 py-5 border-b border-slate-700/70 flex items-center gap-3">
-          <h2 className="text-2xl text-white tracking-tight">Call List</h2>
+          <h2 className="md:text-2xl text-white tracking-tight">Call List</h2>
         </div>
 
         {/* Cards */}

@@ -1,5 +1,5 @@
 // CallTrendsChart.jsx
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import {
   Area,
   AreaChart,
@@ -42,29 +42,10 @@ export default function CallTrendsChart() {
   const currentData = periods[timeRange];
   const totalCalls = currentData.reduce((sum, d) => sum + d.calls, 0);
 
-  const stats = useMemo(() => {
-    const avg = (totalCalls / currentData.length).toFixed(1);
-    const max = Math.max(...currentData.map((d) => d.calls));
-    const maxDay = currentData.find((d) => d.calls === max)?.day || "—";
-
-    const thisTotal = thisWeekData.reduce((s, d) => s + d.calls, 0);
-    const lastTotal = lastWeekData.reduce((s, d) => s + d.calls, 0);
-    const trendPercent =
-      lastTotal === 0 ? 0 : ((thisTotal - lastTotal) / lastTotal) * 100;
-    const trend = `${trendPercent >= 0 ? "+" : ""}${trendPercent.toFixed(1)}%`;
-
-    return {
-      avgDaily: avg,
-      peakDay: `${maxDay} (${max} calls)`,
-      responseRate: "94.2%",
-      trend,
-    };
-  }, [timeRange]);
-
   const options = ["This Week", "Last Week"];
 
   return (
-    <div className="w-full max-w-full sm:max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-4 sm:p-6 lg:p-8">
+    <div className="w-full max-w-full sm:max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-xl md:rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-4 sm:p-6 lg:p-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
         <div>

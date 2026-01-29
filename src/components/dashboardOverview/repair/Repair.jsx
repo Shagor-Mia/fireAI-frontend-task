@@ -46,7 +46,7 @@ const RepairCard = ({ item }) => {
 
 const Repair = () => {
   return (
-    <div className="grid grid-cols-1  dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl px-6 h-full w-full">
+    <div className="grid grid-cols-1  dark:bg-gray-900 rounded-xl  md:rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl px-6 h-full w-full">
       <h2 className="md:text-2xl pt-10 text-gray-900 dark:text-gray-100">
         Top Repair Requests
       </h2>

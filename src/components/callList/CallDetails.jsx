@@ -1,4 +1,3 @@
-import React from "react";
 import { CirclePlay, FileText } from "lucide-react";
 import { Filter1, IssueFilter, TypeFilter } from "../Filter";
 
@@ -42,7 +41,7 @@ const callDetails = {
 
 const CallDetails = () => {
   return (
-    <div className="px-2 md:px-0">
+    <div className="px-4 md:px-6">
       {/* Filters */}
       <div className="flex flex-col md:flex-row md:justify-between gap-3 my-5">
         <TypeFilter />
@@ -52,17 +51,17 @@ const CallDetails = () => {
 
       <div className="max-w-4xl mx-auto">
         {/* Main Card */}
-        <div className="bg-slate-900/90 backdrop-blur-sm rounded-2xl border border-slate-800/60 shadow-2xl overflow-hidden">
+        <div className="bg-slate-900/90 backdrop-blur-sm rounded-xl  md:rounded-2xl border border-slate-800/60 shadow-2xl overflow-hidden">
           {/* Header */}
           <div className="px-6 py-5 border-b border-slate-700/70">
-            <h1 className="text-2xl tracking-tight flex items-center gap-3">
+            <h1 className="md:text-2xl tracking-tight flex items-center gap-3">
               Call Details
             </h1>
           </div>
 
           {/* Info Rows */}
           <div className="flex flex-col md:flex-row md:gap-10 px-4 md:px-6 py-4">
-            <div className="flex-1 space-y-6">
+            <div className="flex-1 text-xs space-y-6">
               <InfoRow label="Phone Number" value={callDetails.phoneNumber} />
               <InfoRow label="Date & Time" value={callDetails.dateTime} />
               <div>
@@ -82,13 +81,13 @@ const CallDetails = () => {
           </div>
 
           {/* Outcome & Audio */}
-          <div className="px-4 md:px-6">
+          <div className="px-2 md:px-6">
             <div className="mt-5">
               <label className="text-sm text-slate-400 block">Outcome</label>
               <p className="text-slate-200">{callDetails.outcome}</p>
             </div>
 
-            <button className="w-full mt-4 bg-purple-400/30 hover:from-violet-600 hover:to-purple-600 text-purple-500 transition-all px-6 py-3 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-violet-900/30 border border-purple-500/30 hover:text-white">
+            <button className="w-full mt-4 bg-purple-400/30 hover:from-violet-600 hover:to-purple-600 text-purple-500 transition-all md:px-6 py-3 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-violet-900/30 border border-purple-500/30 hover:text-white">
               <CirclePlay />
               Play Audio Recording
             </button>
@@ -96,12 +95,12 @@ const CallDetails = () => {
 
           {/* Transcript Section */}
           <div className="mt-5">
-            <div className="px-6 py-5 flex items-center gap-3 border-b border-slate-800/60">
+            <div className="md:px-6 px-3 py-5 flex items-center gap-3 border-b border-slate-800/60">
               <FileText className="text-blue-500" />
-              <h2 className="text-lg font-semibold">Conversation Transcript</h2>
+              <h2 className="text-lg ">Conversation Transcript</h2>
             </div>
 
-            <div className="p-4 md:p-6 space-y-6 bg-gray-800 mx-2 md:mx-5 mb-5 rounded-2xl">
+            <div className="p-4 md:p-6 space-y-6 bg-gray-800 mx-3 md:mx-5 mb-5 rounded-2xl">
               {callDetails.transcript.map((entry, index) => (
                 <div key={index} className="space-y-1">
                   <p
@@ -127,7 +126,7 @@ const CallDetails = () => {
   );
 };
 
-// Reusable Info Row Component
+//  Row Component
 function InfoRow({ icon, label, value }) {
   return (
     <div className="flex items-center gap-4 py-1">
