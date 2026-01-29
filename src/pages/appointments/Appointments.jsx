@@ -1,10 +1,15 @@
+import { useState } from "react";
+import CompactStatCards from "../../components/appointments/Cards";
+import CopyCard from "../../components/appointments/CopyCard";
+import AppointmentTable from "../../components/appointments/Table";
+
 const Appointments = () => {
+  const [selectedLink, setSelectedLink] = useState("");
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-2">Appointments</h1>
-      <p className="text-gray-600">
-        Manage and view your appointments from here.
-      </p>
+      <CompactStatCards />
+      <CopyCard bookingLink={selectedLink} />
+      <AppointmentTable onRowClick={setSelectedLink} />
     </div>
   );
 };
