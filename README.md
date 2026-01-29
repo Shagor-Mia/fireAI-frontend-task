@@ -1,16 +1,82 @@
-# React + Vite
+# 🔥 fireAI Frontend Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Assignment task submission for **fireAI** — a modern single-page application (SPA) built with **React**, **Vite**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+Check out the **live demo** here: [🔥 Live Dashboard](https://frontend-task-fire-ai.netlify.app/dashboard)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This SPA includes:
 
-## Expanding the ESLint configuration
+- Responsive layout & mobile-first design
+- Modern UI components styled with Tailwind CSS
+- Fast development & hot module replacement (HMR) powered by Vite
+- Clean component-based architecture using React
+- Interactive dashboard with cards, tables, or forms
+- Data visualization components
+- Authentication UI / mock login screen
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technologies Used
+
+- React Js
+- React Router
+- Tailwind CSS
+- Daisy UI
+- Recharts
+- Lucide Icons
+- React Icons
+
+---
+
+## 📂 Project Structure
+
+```text
+fireAI-frontend-task/
+├── public/                     # Static assets (e.g., favicon, images)
+├── src/
+│   ├── assets/                 # Images, icons, etc.
+│   ├── components/             # Reusable UI components
+│   │   ├── appointments/       # Appointment-related components
+│   │   ├── callList/           # Call logs list & related components
+│   │   ├── dashboardOverviewList/
+│   │   ├── Filter.jsx          # Filtering UI
+│   │   └── Search.jsx          # Search bar component
+│   ├── layouts/
+│   │   └── DashboardLayout.jsx # Main layout wrapper for dashboard pages
+│   ├── pages/                  # Page-level components
+│   │   ├── appointments/       # Appointments page & sub-components
+│   │   ├── callLogs/           # Call logs page
+│   │   └── Dashboard/          # Dashboard overview page
+│   ├── routes/
+│   │   └── Router.jsx          # Routing configuration (likely using React Router)
+│   ├── App.jsx                 # Root component
+│   ├── App.css                 # Global/app-specific styles (if any)
+│   ├── index.css               # Tailwind base + custom styles
+│   └── main.jsx                # Entry point
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
+
+
+# Clone the repository
+git clone https://github.com/Shagor-Mia/fireAI-frontend-task.git
+cd fireAI-frontend-task
+
+# Install dependencies
+npm install
+
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
